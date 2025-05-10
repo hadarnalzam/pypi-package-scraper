@@ -1,21 +1,19 @@
-import os
 import requests
-
+import os
 
 def download_distribution_file(urls: list, dest_dir: str) -> str:
     """
-    Download a .tar.gz or .whl file from the given URLs.
+    Download a .whl, .tar.gz, or .zip file from the given URLs.
     Returns path to the downloaded file.
     """
 
-    priority = [".tar.gz", ".whl", ".zip"]
+    priority = [".whl", ".tar.gz", ".zip"]  # Prefer .whl for .dist-info/METADATA
 
-    # Sort urls by priority
     def get_priority(filename):
         for i, ext in enumerate(priority):
             if filename.endswith(ext):
                 return i
-        return len(priority)  # lowest priority if not matched
+        return len(priority)
 
     sorted_urls = sorted(urls, key=lambda x: get_priority(x["filename"]))
 
