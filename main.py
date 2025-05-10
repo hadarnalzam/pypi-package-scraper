@@ -1,9 +1,6 @@
 import sys
 from scraper.pipeline import scrape_package
 
-import sys
-from scraper.pipeline import scrape_package  # put your function in scraper/pipeline.py or __init__.py
-
 
 def main():
     if len(sys.argv) != 2:
