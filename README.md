@@ -1,17 +1,17 @@
 # PyPI Package Scraper
 
-A Python utility to fetch the latest version of a PyPI package, download its source, and extract dependencies.
+A Python CLI tool to fetch the latest version of a PyPI package, download its source code archive, and extract a list of its dependencies.
 
-## Features
+## 📦 Features
 
-- Retrieve the latest package version from PyPI
-- Download package archives (`.tar.gz` or `.whl`)
-- Extract package contents
-- Parse dependencies from `setup.py`, `requirements.txt`, etc.
+- Get the latest release metadata from PyPI
+- Download `.tar.gz` or `.whl` source distributions
+- Extract package contents to a local folder
+- Parse dependencies from:
+  - `requirements.txt`
+  - `setup.py`
 
-## Installation
+## 🚀 Usage
 
 ```bash
-git clone https://github.com/hadarnalzam/pypi-package-scraper.git
-cd pypi-package-scraper
-pip install -r requirements.txt
+python main.py <package_name>
